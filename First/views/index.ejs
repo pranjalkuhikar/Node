@@ -8,6 +8,12 @@
   </head>
   <body>
     <h1>Hello EJS <%= 4+4 %></h1>
+    <form action="/create" method="post">
+      <input type="text" placeholder="Enter the Name" name="name" />
+      <input type="email" placeholder="Enter the Email" name="email" />
+      <input type="password" placeholder="Enter the Password" name="password" />
+      <button>Submit</button>
+    </form>
     <script src="/javascript/script.js"></script>
   </body>
 </html>
