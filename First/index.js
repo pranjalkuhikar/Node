@@ -34,7 +34,13 @@ const formData = [
 ];
 
 app.get("/data", (req, res) => {
-  res.render("data", { data: formData });
+  res.render("data", { data: formData }, (err, html) => {
+    if (err) {
+      console.error("Error rendering the view:", err);
+      return res.status(500).send("Something went wrong!");
+    }
+    res.send(html);
+  });
 });
 
 app.get("*", (req, res) => {
