@@ -24,7 +24,17 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", { title: "Examples" });
+});
+
+const formData = [
+  { title: "First Item", description: "This is the first item description." },
+  { title: "Second Item", description: "This is the second item description." },
+  { title: "Third Item", description: "This is the third item description." },
+];
+
+app.get("/data", (req, res) => {
+  res.render("data", { data: formData });
 });
 
 app.get("*", (req, res) => {
