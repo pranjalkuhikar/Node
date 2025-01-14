@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-gray-900 text-white flex items-center justify-center h-screen"
+  >
+    <div class="bg-gray-800 p-8 rounded-lg shadow-md w-full max-w-md">
+      <h1 class="text-3xl font-bold mb-6 text-center text-indigo-400">
+        Todo App
+      </h1>
+      <form action="/add" method="POST" class="space-y-4">
+        <div>
+          <label for="todo" class="block text-sm font-medium text-gray-300"
+            >New Todo</label
+          >
+          <input
+            type="text"
+            name="todo"
+            id="todo"
+            class="mt-1 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-gray-700 text-white"
+            required
+          />
+        </div>
+        <div>
+          <button
+            type="submit"
+            class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
+            Add Todo
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
