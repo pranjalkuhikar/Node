@@ -1,7 +1,7 @@
 module.exports.userController = (req, res) => {
-  res.send("Hello UserController");
+  res.send("User");
 };
 
 module.exports.profileController = (req, res) => {
-  res.send("Hello ProfileController");
+  res.send("Profile");
 };

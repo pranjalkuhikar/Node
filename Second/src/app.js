@@ -7,7 +7,7 @@ const {
 const {
   userController,
   profileController,
-} = require("./controllers/userController");
+} = require("./controllers/user.controller");
 
 app.get("/", indexController);
 app.get("/about", aboutController);
