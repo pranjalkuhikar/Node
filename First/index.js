@@ -14,40 +14,40 @@
 // app.listen(3000);
 
 // Creating SSR through EJS
-const express = require("express");
-const app = express();
-const path = require("path");
-const morgan = require("morgan");
+// const express = require("express");
+// const app = express();
+// const path = require("path");
+// const morgan = require("morgan");
 
-app.use(morgan("dev"));
-app.set("view engine", "ejs");
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(morgan("dev"));
+// app.set("view engine", "ejs");
+// app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/", (req, res) => {
-  res.render("index", { title: "Examples" });
-});
+// app.get("/", (req, res) => {
+//   res.render("index", { title: "Examples" });
+// });
 
-const formData = [
-  { title: "First Item", description: "This is the first item description." },
-  { title: "Second Item", description: "This is the second item description." },
-  { title: "Third Item", description: "This is the third item description." },
-];
+// const formData = [
+//   { title: "First Item", description: "This is the first item description." },
+//   { title: "Second Item", description: "This is the second item description." },
+//   { title: "Third Item", description: "This is the third item description." },
+// ];
 
-app.get("/data", (req, res) => {
-  res.render("data", { data: formData }, (err, html) => {
-    if (err) {
-      console.error("Error rendering the view:", err);
-      return res.status(500).send("Something went wrong!");
-    }
-    res.send(html);
-  });
-});
+// app.get("/data", (req, res) => {
+//   res.render("data", { data: formData }, (err, html) => {
+//     if (err) {
+//       console.error("Error rendering the view:", err);
+//       return res.status(500).send("Something went wrong!");
+//     }
+//     res.send(html);
+//   });
+// });
 
-app.get("*", (req, res) => {
-  res.render("not-found");
-});
+// app.get("*", (req, res) => {
+//   res.render("not-found");
+// });
 
-app.listen(3000);
+// app.listen(3000);
 
 // Form Handling
 // const express = require("express");
