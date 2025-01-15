@@ -3,7 +3,8 @@ let todos = [];
 export const todoData = (req, res) => {
   const { todo } = req.body;
   todos.push(todo);
-  res.render("data", { todos });
+  res.send(todos);
+  // res.render("data", { todos });
 };
 
 export const deleteTodo = (req, res) => {
