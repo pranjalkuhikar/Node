@@ -1,8 +1,11 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const connectDB = () => {
   mongoose
-    .connect("mongodb://localhost:27017/kodr")
+    .connect(process.env.MONGO_URI)
     .then(() => {
       console.log("MongoDB connected...");
     })
@@ -12,7 +15,6 @@ const connectDB = () => {
     });
 };
 
-// Define a schema
 const userSchema = new mongoose.Schema(
   {
     name: {
@@ -32,7 +34,6 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// Create a model
 const User = mongoose.model("User", userSchema);
 
 export default connectDB;
