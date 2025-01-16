@@ -1,3 +1,3 @@
 export const indexController = (req, res) => {
-  res.send("Hello");
+  res.send("Home");
 };
