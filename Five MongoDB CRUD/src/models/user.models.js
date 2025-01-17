@@ -1,8 +1,12 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
-  name: String,
-  email: String,
+  name: {
+    type: String,
+  },
+  email: {
+    type: String,
+  },
 });
 
 const user = mongoose.model("user", userSchema);
