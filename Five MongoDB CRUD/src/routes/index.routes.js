@@ -1,12 +1,18 @@
 import { Router } from "express";
 import {
   createUser,
+  deleteUser,
+  getUser,
   indexController,
+  updateUser,
 } from "../controllers/index.controller.js";
 
-const route = Router();
+const router = Router();
 
-route.get("/", indexController);
-route.post("/create", createUser);
+router.get("/", indexController);
+router.post("/create", createUser);
+router.get("/users", getUser);
+router.put("/update/:id", updateUser);
+router.delete("/delete/:id", deleteUser);
 
-export default route;
+export default router;
