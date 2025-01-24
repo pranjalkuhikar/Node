@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social LikeCount</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <header class="bg-white shadow-md p-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">Social LikeCount</h1>
+      <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded"
+        >Create Post</a
+      >
+    </header>
+    <div class="container mx-auto mt-6 px-4">
+      <!-- Example Post -->
+      <div
+        class="bg-white border border-gray-300 rounded-lg overflow-hidden mb-6"
+      >
+        <img
+          src="https://via.placeholder.com/600x400"
+          alt="Post Image"
+          class="w-full"
+        />
+        <div class="p-4">
+          <h2 class="text-lg font-semibold mb-2">User's Post Title</h2>
+          <p>This is an example of a user's post description.</p>
+        </div>
+      </div>
+      <!-- Add more posts here -->
+    </div>
+    <footer class="bg-white shadow-md p-4 mt-6 text-center">
+      <p>&copy; 2023 Social LikeCount</p>
+    </footer>
+  </body>
+</html>
+<script>
+  const posts = [
+    {
+      title: "User's Post Title 1",
+      description: "This is an example of a user's post description 1.",
+      imageUrl: "https://via.placeholder.com/600x400",
+    },
+    {
+      title: "User's Post Title 2",
+      description: "This is an example of a user's post description 2.",
+      imageUrl: "https://via.placeholder.com/600x400",
+    },
+    // Add more posts as needed
+  ];
+
+  const container = document.querySelector(".container");
+
+  posts.forEach((post) => {
+    const postElement = document.createElement("div");
+    postElement.classList.add(
+      "bg-white",
+      "border",
+      "border-gray-300",
+      "rounded-lg",
+      "overflow-hidden",
+      "mb-6"
+    );
+
+    postElement.innerHTML = `
+            <img src="${post.imageUrl}" alt="Post Image" class="w-full">
+            <div class="p-4">
+                <h2 class="text-lg font-semibold mb-2">${post.title}</h2>
+                <p>${post.description}</p>
+            </div>
+        `;
+
+    container.appendChild(postElement);
+  });
+</script>
